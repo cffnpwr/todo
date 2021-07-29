@@ -143,4 +143,4 @@ JWT_AUTH = {
     'JWT_AUTH_HEADER_PREFIX': 'JWT',
 }
 
-# AUTH_USER_MODEL = 'user.Account'
+AUTH_USER_MODEL = 'user.Account'

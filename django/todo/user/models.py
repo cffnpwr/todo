@@ -17,7 +17,6 @@ class Account(AbstractBaseUser):
     object = AccountManager()
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['username']
 
     def user_has_perm(user, perm, obj):
         return _user_has_perm(user, perm, obj)
@@ -25,6 +24,6 @@ class Account(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         return _user_has_perm(self, perm, obj=obj)
 
-    # class Meta:
-    #     db_table = 'api_user'
-        # swappable = 'AUTH_USER_MODEL'
+    class Meta:
+        db_table = 'api_user'
+        swappable = 'AUTH_USER_MODEL'
