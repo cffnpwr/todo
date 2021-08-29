@@ -20,9 +20,11 @@ from rest_framework import routers
 from rest_framework_jwt.views import obtain_jwt_token
 
 from user.views import UserViewSet, AuthRegister
+from todolist.views import ToDoViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
+router.register(r'todolist', ToDoViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
