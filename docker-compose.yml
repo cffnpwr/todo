@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  django:
+    build: ./django
+    command: bash -c "./build.sh && python manage.py runserver 0.0.0.0:5894"
+    volumes:
+      - ./django:/todo/django
+    ports:
+      - "5894:5894"
