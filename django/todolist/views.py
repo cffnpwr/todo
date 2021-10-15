@@ -26,16 +26,8 @@ class ToDoViewSet(viewsets.ModelViewSet):
 
     @action(methods=['update'], detail=True)
     def updateToDo(self):
-        try:
-            instance = self.queryset.get(self.request)
-            return instance
-        except ToDoList.DoesNotExist:
-            return Http404
+        return self.queryset.get(self.request)
 
     @action(methods=['destroy'], detail=True)
     def deleteToDo(self):
-        try:
-            instance = self.queryset.get(self.request)
-            return instance
-        except ToDoList.DoesNotExist:
-            return Http404
+        return self.queryset.get(self.request)

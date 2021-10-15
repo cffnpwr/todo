@@ -10,6 +10,7 @@ class ToDoListManager(models.Manager):
 
 
 class ToDoList(models.Model):
+    user = models.CharField(max_length=256, primary_key=True)
     title = models.CharField(max_length=256)
     detail = models.TextField()
     checked = models.BooleanField(default=False)
