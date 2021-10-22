@@ -27,7 +27,7 @@ class AccountManager(BaseUserManager):
 
 
 class Account(AbstractBaseUser):
-    username = models.CharField(max_length=64, unique=True)
+    username = models.CharField(max_length=64, unique=True, primary_key=True)
     is_staff = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
     objects = AccountManager()

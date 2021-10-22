@@ -13,7 +13,7 @@ class AccountSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Account
-        fields = ('id', 'username', 'password')
+        fields = ('username', 'password')
 
     def create(self, validated_data):
         return Account.objects.create_user(request_data=validated_data)
